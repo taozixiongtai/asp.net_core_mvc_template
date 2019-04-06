@@ -1,0 +1,39 @@
+﻿
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] -taozixiongtai</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <environment include="Development">
+
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+
+
+
+    </environment>
+
+    <script src="~/js/site.min.js"></script>
+</head>
+
+
+
+
+<body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+       
+        <partial name="_Header" />
+        <partial name="_Sidebar" />
+        @RenderBody()                                   
+
+        <partial name="_ControlSidebar" />
+        <partial name="_Footer" />
+                                 
+    </div>
+
+  
+</body>
+</html>

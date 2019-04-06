@@ -1,0 +1,55 @@
+﻿
+
+<aside class="main-sidebar">
+    <section class="sidebar">
+        <ul class="sidebar-menu" data-widget="tree">
+            <li class="header">菜单</li>
+
+
+            <li>
+                <a href="@Url.Action("Index", "IP")"><i class="fa fa-tachometer"></i> <span>仪表盘</span></a>
+            </li>
+
+
+
+
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-file-excel-o"></i> <span>文章</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+               
+            </li>
+
+
+
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-cogs"></i> <span>统计</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+               
+            </li>
+
+
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-thumb-tack"></i> <span>用户管理</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="@Url.Action("CheckUser", "UserManager")"><i class="fa fa-circle-o"></i>查看用户</a></li>
+                    <li><a href="@Url.Action("Grant", "UserManager")"><i class="fa fa-circle-o"></i>修改权限</a></li>
+                    <li><a href="@Url.Action("AddUser", "UserManager")"><i class="fa fa-circle-o"></i>增加用户</a></li>
+                </ul>
+            </li>
+
+        </ul>
+    </section>
+</aside>

@@ -1,0 +1,42 @@
+[
+  {
+    "outputFileName": "wwwroot/css/site.min.css",
+    "inputFiles": [
+      "wwwroot/css/bootstrap.min.css",
+      "wwwroot/css/bootstrap-select.css",
+      "wwwroot/css/bootstrap-datepicker3.min.css",
+      "wwwroot/css/font-awesome.min.css",
+      "wwwroot/css/icheck/blue.min.css",
+      "wwwroot/css/AdminLTE.css",
+      "wwwroot/css/datatables.min.css",
+      "wwwroot/css/skins/skin-blue.css"
+    ]
+  },
+
+
+  {
+    "outputFileName": "wwwroot/js/site.min.js",
+    "inputFiles": [
+      "wwwroot/js/plugins/jquery/jquery-3.3.1.js",
+      "wwwroot/js/plugins/jquery-mask/jquery.mask.js",
+      "wwwroot/js/plugins/data-tables/datatables.min.js",
+      "wwwroot/js/adminlte.js",
+      "wwwroot/js/plugins/icheck/icheck.js",
+      "wwwroot/js/plugins/validator/jquery.validate.min.js",
+      "wwwroot/js/plugins/validator/jquery.validate.date.js",
+      "wwwroot/js/plugins/validator/jquery.validate.unobtrusive.min.js",
+      "wwwroot/js/plugins/inputmask/jquery.inputmask.bundle.js",
+      "wwwroot/js/plugins/bootstrap/bootstrap.js",
+      "wwwroot/js/plugins/fastclick/fastclick.js",
+      "wwwroot/js/plugins/slimscroll/jquery.slimscroll.js",
+      "wwwroot/js/plugins/bootstrap-select/bootstrap-select.js",
+      "wwwroot/js/plugins/moment/moment.js",
+      "wwwroot/js/plugins/datepicker/bootstrap-datepicker.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  }
+]
