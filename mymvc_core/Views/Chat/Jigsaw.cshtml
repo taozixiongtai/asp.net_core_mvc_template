@@ -1,0 +1,58 @@
+﻿@{
+    ViewData["Title"] = "Jigsaw";
+}
+<script src="~/lib/aspnet/signalr/dist/browser/signalr.js"></script>
+<script src="~/js/Jigsaw.js"></script>
+<style>
+    #box {
+        width: 330px;
+        height: 330px;
+        padding: 0px;
+        margin: auto auto;
+        list-style: none;
+    }
+
+        #box li {
+            width: 90px;
+            height: 90px;
+            margin: 10px;
+            background: pink;
+            float: left;
+            font-size: 50px;
+            color: #fff;
+            text-align: center;
+            line-height: 95px;
+        }
+</style>
+
+
+
+<div class="content-wrapper">
+    <ul id="box">
+        @{
+            int index = 0;
+
+            for (int i = 1; i < 4; i++)
+            {
+                for (int j = 1; j < 4; j++)
+                {
+                    if (i*j==9)
+                    {
+                        continue;
+                    }
+                    <li x=@j y=@i>@ViewBag.c[index++]</li>
+                }
+
+            }
+
+
+
+
+        }
+        <li x=3 y=3 class="empty"></li>
+    </ul>
+</div>
+
+
+
+

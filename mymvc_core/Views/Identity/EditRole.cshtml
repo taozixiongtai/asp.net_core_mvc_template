@@ -1,0 +1,71 @@
+﻿@model mymvc_core.Models.ViewModels.UserRoleViewModel
+@{
+    ViewData["Title"] = "EditRole";
+}
+    <script type="text/javascript">
+        $(function () {
+            $("#user").change(function () {
+                $("h2").text("");
+                var checkText = $("#user").find("option:selected").text();
+                console.log(checkText);
+                $.post("/Identity/GetRolesList?userName=" + checkText, {}, function (data) {
+                    var result = $.parseJSON(data);
+                    $.each(result, function (key, value) {
+                        console.log(result[key]);
+                        $("h2").append(result[key]+ "<br/>");
+                    });
+                });
+            });
+        });
+
+
+
+    </script>
+<div class="content-wrapper">
+    <h2></h2>
+    <section class="content">
+        <div class="row">
+            <div class="col-md-9">
+                <!-- box -->
+                <div class="box box-warning">
+                    <div class="box-body">
+                        <div class="row">
+                            <div class="col-md-11">
+                                <form role="form" action="@Url.Action("Add", "Identity")" method="post">
+                                    <span class="text-red">@Html.ValidationSummary()</span>
+
+
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <select class="form-control selectpicker" id="user" asp-for="UserId" asp-items="@(new SelectList(Model.Users, "Id", "UserName"))">
+                                                    <option> -- 请选择一个用户 -- </option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <select class="form-control selectpicker"  asp-for="RoleId" asp-items="@(new SelectList(Model.Roles, "Id", "Name"))">
+                                                    <option> -- 请选择一个角色 -- </option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @Html.AntiForgeryToken()
+                                    <button type="submit" class="btn btn-success btn-flat pull-left"><i class="fa fa-check"></i> 确定</button>
+                                </form>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

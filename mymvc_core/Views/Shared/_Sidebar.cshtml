@@ -7,32 +7,25 @@
 
 
             <li>
-                <a href="@Url.Action("Index", "IP")"><i class="fa fa-tachometer"></i> <span>仪表盘</span></a>
+                <a href="@Url.Action("Index", "home")"><i class="fa fa-tachometer"></i> <span>主页</span></a>
             </li>
 
 
 
 
+
+
             <li class="treeview">
-                <a href="#">
-                    <i class="fa fa-file-excel-o"></i> <span>文章</span>
+                <a href="@Url.Action("Messages","AdminLTE")">
+                    <i class="fa fa-cogs"></i> <span>AdminLTE</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
                 </a>
-               
-            </li>
-
-
-
-            <li class="treeview">
-                <a href="#">
-                    <i class="fa fa-cogs"></i> <span>统计</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                </a>
-               
+                <ul class="treeview-menu">
+                    <li><a href="@Url.Action("Messages", "AdminLTE")"><i class="fa fa-circle-o"></i>查看留言</a></li>
+                    <li><a href="@Url.Action("Add", "AdminLTE")"><i class="fa fa-circle-o"></i>添加留言</a></li>
+                </ul>
             </li>
 
 
@@ -44,9 +37,23 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="@Url.Action("CheckUser", "UserManager")"><i class="fa fa-circle-o"></i>查看用户</a></li>
-                    <li><a href="@Url.Action("Grant", "UserManager")"><i class="fa fa-circle-o"></i>修改权限</a></li>
-                    <li><a href="@Url.Action("AddUser", "UserManager")"><i class="fa fa-circle-o"></i>增加用户</a></li>
+                    <li><a href="@Url.Action("ConfirmEmail", "identity")"><i class="fa fa-circle-o"></i>添加邮箱</a></li>
+                    <li><a href="@Url.Action("ChangePassword", "identity")"><i class="fa fa-circle-o"></i>修改密码</a></li>
+                    <li><a href="@Url.Action("AddUser", "UserManager")"><i class="fa fa-circle-o"></i>权限操作</a></li>
+                </ul>
+            </li>
+
+
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-thumb-tack"></i> <span>Signalr</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="@Url.Action("ChatRoom", "Chat")"><i class="fa fa-circle-o"></i>聊天室</a></li>
+                    <li><a href="@Url.Action("Jigsaw", "Chat")"><i class="fa fa-circle-o"></i>拼图</a></li>
                 </ul>
             </li>
 

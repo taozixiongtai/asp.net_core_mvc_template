@@ -1,25 +1,31 @@
-﻿@model ErrorViewModel
+﻿
 @{
     ViewData["Title"] = "Error";
+
 }
 
-<h1 class="text-danger">Error.</h1>
-<h2 class="text-danger">An error occurred while processing your request.</h2>
+    <div class="content-wrapper">
+        <!-- Main content -->
+        <section class="content">
+            <div class="error-page">
+                <h2 class="headline text-red">@ViewBag.a</h2>
 
-@if (Model.ShowRequestId)
-{
-    <p>
-        <strong>Request ID:</strong> <code>@Model.RequestId</code>
-    </p>
-}
+                <div class="error-content">
+                    <h3><i class="fa fa-warning text-red"></i>没能找到你访问的资源</h3>
 
-<h3>Development Mode</h3>
-<p>
-    Swapping to <strong>Development</strong> environment will display more detailed information about the error that occurred.
-</p>
-<p>
-    <strong>The Development environment shouldn't be enabled for deployed applications.</strong>
-    It can result in displaying sensitive information from exceptions to end users.
-    For local debugging, enable the <strong>Development</strong> environment by setting the <strong>ASPNETCORE_ENVIRONMENT</strong> environment variable to <strong>Development</strong>
-    and restarting the app.
-</p>
+                    @if (@TempData["ErrorMessage"]!=null)
+                    {
+                        <p><strong>详细信息:</strong> @TempData["ErrorMessage"]</p>
+                    }
+                    else
+                    {
+                        <p><strong>详细信息:</strong> 请检查你输入的地址</p>
+                    }
+
+
+                    <a href="@Url.Action("Index", "home")" class="btn btn-default btn-flat" role="button">主页</a>
+                </div>
+            </div>
+        </section>
+        <!-- /.content -->
+    </div>

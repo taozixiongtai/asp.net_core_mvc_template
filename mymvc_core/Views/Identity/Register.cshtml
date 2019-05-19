@@ -1,0 +1,110 @@
+﻿@model mymvc_core.Models.ViewModels.RegisterViewModel
+@{
+    ViewData["Title"] = "Add";
+}
+
+<div class="content-wrapper">
+
+    <h2>
+        @ViewBag.a
+    </h2>
+    <section class="content">
+        <div class="row">
+            <div class="col-md-9">
+                <!-- box -->
+                <div class="box box-warning">
+                    <div class="box-body">
+                        <div class="row">
+                            <div class="col-md-11">
+                                <form role="form" action="@Url.Action("Add", "Identity")" method="post">
+                                    <span class="text-red">@Html.ValidationSummary()</span>
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                @Html.Label("账户")
+                                                @Html.TextBoxFor(t => t.UserName, new { Class = "form-control" })
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                @Html.Label("密码")
+                                                @Html.TextBoxFor(t => t.Password, new { Class = "form-control" })
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                @Html.Label("账户权限")
+                                                @Html.DropDownList("authoriz", new List<SelectListItem>()
+                                        {
+                                                 new SelectListItem() { Text = "Employee", Value = "Employee" },
+                                                new SelectListItem() { Text = "Admin", Value = "Admin" },
+                                                new SelectListItem() { Text = "Manager", Value = "Manager" },
+
+                                       },
+                                                new { Class = "form-control selectpicker", @onchange = "FillCity()" }
+                                           )
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    @Html.AntiForgeryToken()
+                                    <button type="submit" class="btn btn-success btn-flat pull-left"><i class="fa fa-check"></i> 确定</button>
+                                </form>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <!-- /.box -->
+            </div>
+
+
+            <div class="col-md-3">
+                <!-- accounts-box -->
+                <div class="box box-info">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">账户列表</h3>
+
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                <i class="fa fa-minus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="box-body">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>已存在的账户</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item  in ViewBag.userList)
+                                {
+                                    <tr>
+                                        <td>@item.UserName</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</div>
+
+

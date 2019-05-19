@@ -32,6 +32,7 @@
       "wwwroot/js/plugins/bootstrap-select/bootstrap-select.js",
       "wwwroot/js/plugins/moment/moment.js",
       "wwwroot/js/plugins/datepicker/bootstrap-datepicker.js"
+
     ],
     "minify": {
       "enabled": true,

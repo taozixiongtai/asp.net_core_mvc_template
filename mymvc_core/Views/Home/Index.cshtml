@@ -1,8 +1,31 @@
-﻿
+﻿@using System.Security.Claims
+@using mymvc_core.Extensions
+@model IEnumerable<Claim>
 @{
     ViewData["Title"] = "Index";
 }
-    <div class="content-wrapper">
-        <h2>Index</h2>
+<div class="content-wrapper">
+    <h2>@ViewBag.a</h2>
+    <h2>@ViewBag.b</h2>
+    <h2>@ViewBag.c</h2>
 
-        </div>
+
+    
+    <table class="table table-striped">
+        <tr>
+            <th>声明的认证方名称</th>
+            <th>声明指向的ClaimIdentity 对象</th>
+            <th>声明代表的信息类型</th>
+            <th>声明代表的用户信息的值</th>
+        </tr>
+        @foreach (Claim claim in Model.OrderBy(x => x.Type))
+        {
+            <tr>
+                <td>@claim.Subject.Name</td>
+                <td>@claim.Issuer</td>
+                <td>@Html.ClaimType(claim.Type)</td>
+                <td>@claim.Value</td>
+            </tr>
+        }
+    </table>
+</div>

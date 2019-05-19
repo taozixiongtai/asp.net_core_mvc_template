@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28721.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mymvc_core", "mymvc_core\mymvc_core.csproj", "{B389F5EB-62B2-499F-8B9C-F953126751DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mymvc_core", "mymvc_core\mymvc_core.csproj", "{B389F5EB-62B2-499F-8B9C-F953126751DD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mymvc_core.Serverice.Email", "mymvc_core.Serverice.Email\mymvc_core.Serverice.Email.csproj", "{B16E2EA9-9C0B-4A4E-A8B9-04FE4271B1AA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mymvc_core.Extensions", "mymvc_core.Extensions\mymvc_core.Extensions.csproj", "{1C4E8C0A-63CA-4A36-B08D-916BC9EDFD7C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mymvc_core.Hubs", "ClassLibrary1\mymvc_core.Hubs.csproj", "{1AB6CCDC-67DF-4027-9B2C-D869CD29B8D0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{B389F5EB-62B2-499F-8B9C-F953126751DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B389F5EB-62B2-499F-8B9C-F953126751DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B389F5EB-62B2-499F-8B9C-F953126751DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B16E2EA9-9C0B-4A4E-A8B9-04FE4271B1AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B16E2EA9-9C0B-4A4E-A8B9-04FE4271B1AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B16E2EA9-9C0B-4A4E-A8B9-04FE4271B1AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B16E2EA9-9C0B-4A4E-A8B9-04FE4271B1AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C4E8C0A-63CA-4A36-B08D-916BC9EDFD7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C4E8C0A-63CA-4A36-B08D-916BC9EDFD7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C4E8C0A-63CA-4A36-B08D-916BC9EDFD7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C4E8C0A-63CA-4A36-B08D-916BC9EDFD7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AB6CCDC-67DF-4027-9B2C-D869CD29B8D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AB6CCDC-67DF-4027-9B2C-D869CD29B8D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AB6CCDC-67DF-4027-9B2C-D869CD29B8D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AB6CCDC-67DF-4027-9B2C-D869CD29B8D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

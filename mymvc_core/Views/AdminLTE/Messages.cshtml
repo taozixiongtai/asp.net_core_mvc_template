@@ -1,0 +1,73 @@
+﻿@model  IEnumerable< mymvc_core.Models.Messages>
+    @{
+    ViewData["Title"] = "Messages";
+    }
+
+    <div class="content-wrapper">
+
+        <section class="content-header">
+            <h1>
+                @ViewBag.Title
+                <small>添加，编辑，查看和修改你的留言</small>
+            </h1>
+        </section>
+
+
+
+        <section class="content">
+            <div class="box box-primary">
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <a href="@Url.Action("Add", "AdminLTE" )" class="btn btn-flat btn-block btn-success"><i class="fa fa-file"></i> 添加留言</a>
+                        </div>
+                    </div>
+
+                    <br />
+                   
+                        <table class="table table-hover datatable">
+                            <thead>
+                                <tr>
+                                    <th>编号</th>
+                                    <th>留言</th>
+                                    <th>日期</th>
+                                    <th>添加者</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var message in Model)
+                                {
+                                <tr>
+                                    <td>@message.Id</td>
+                                    <td>@message.Message</td>
+                                    <td>@message.Date</td>
+                                    <td>@message.Submission</td>
+
+                                    <td>
+                                    <div class="btn-group">
+                                        <a href="@Url.Action("Add", "AdminLTE", new { Id = message.Id})" class="btn btn-flat btn-default"><i class="fa fa-eye"></i> 查看</a>
+                                        <a  class="btn btn-flat btn-danger" onclick="show_confirm(@message.Id)"><i class="fa fa-trash-o"></i> 删除</a>
+                                    </div>
+                                    </td>
+                                </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                
+            </div>
+        </section>
+    </div>
+
+    <script type="text/javascript">
+        function show_confirm(id) {
+            var r = confirm("是否删除该留言");
+            if (r == true) {
+                window.location.href = '../AdminLTE/Delete/' + id;
+            }
+           
+        }
+    </script>
+
+

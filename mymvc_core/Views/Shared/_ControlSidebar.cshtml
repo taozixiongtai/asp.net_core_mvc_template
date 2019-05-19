@@ -1,4 +1,9 @@
-﻿<aside class="control-sidebar control-sidebar-dark">
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+
+<aside class="control-sidebar control-sidebar-dark">
     <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
         <li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
     </ul>
@@ -11,8 +16,8 @@
                     <a href="@Url.Action("main", "Home")">
                         <i class="menu-icon fa fa-university bg-blue"></i>
                         <div class="menu-info">
-                            <h4 class="control-sidebar-subheading">博客页</h4>
-                            <p>转到博客页</p>
+                            <h4 class="control-sidebar-subheading">大标题</h4>
+                            <p>内容描述</p>
                         </div>
                     </a>
                 </li>
@@ -44,11 +49,23 @@
                     </a>
                 </li>
                 <li>
-                    <a href="@Url.Action("LoginOut", "Home")">
+                    <a href="@Url.Action("LogOut", "Identity")">
                         <i class="menu-icon fa fa-credit-card bg-green"></i>
                         <div class="menu-info">
                             <h4 class="control-sidebar-subheading">登出</h4>
-                            <p>退出登录</p>
+                            @if (SignInManager.IsSignedIn(User))
+                            {
+                        <p>
+                            @User.Identity.Name
+                        </p>
+                            }
+                            else
+                            {
+                                <p>
+                                    未登录
+                                </p>
+                            }
+
                         </div>
                     </a>
                 </li>
