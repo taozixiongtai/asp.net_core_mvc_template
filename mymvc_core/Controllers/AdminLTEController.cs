@@ -24,7 +24,10 @@ namespace mymvc_core.Controllers
             _messageServer = messageServer;
         }
 
-
+        /// <summary>
+        /// 消息视图
+        /// </summary>
+        /// <returns></returns>
         public async Task<IActionResult> Messages()
         {
 
@@ -32,6 +35,11 @@ namespace mymvc_core.Controllers
 
         }
 
+        /// <summary>
+        /// 添加消息的视图
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public IActionResult Add(int? id)
         {
             try
@@ -42,16 +50,21 @@ namespace mymvc_core.Controllers
                     return View(_messageServer.GetMessagesById(id.GetValueOrDefault()));
                 }
             }
-            catch (NotFoundException e) //捕获异常
+            catch (NotFoundException e)  
             {
                 TempData["ErrorMessage"] = e.Message;
-                return StatusCode(404);         //返回到错误页面。
+                return StatusCode(404);          
 
             }
             return View();
 
         }
 
+        /// <summary>
+        /// 添加消息的表单提交action
+        /// </summary>
+        /// <param name="messages"></param>
+        /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Add(Messages messages)
@@ -82,6 +95,11 @@ namespace mymvc_core.Controllers
             }
         }
 
+        /// <summary>
+        /// 编辑消息
+        /// </summary>
+        /// <param name="messages"></param>
+        /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Update(Messages messages)
@@ -116,7 +134,11 @@ namespace mymvc_core.Controllers
             }
         }
 
-
+        /// <summary>
+        /// 删除消息
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async Task<IActionResult> Delete(int id)
         {
             try
@@ -124,7 +146,7 @@ namespace mymvc_core.Controllers
                 await _messageServer.DelectOne(id);
                 return RedirectToAction(nameof(Messages));
             }
-            catch (DbUpdateException e)                 //更新失败，没有找到的异常在服务类中去实现去了。
+            catch (DbUpdateException e)                  
             {
                 TempData["ErrorMessage"] = e.Message;
                 return StatusCode(400);

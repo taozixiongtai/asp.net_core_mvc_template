@@ -46,7 +46,8 @@ namespace mymvc_core.Controllers
             {
                 ViewBag.c = "没能获取到当前登录的用户";
             }
-          //  c.AddClaims(LocationClaimsProvider.GetClaims(c));
+           
+          
             return View(c.Claims);
 
         }

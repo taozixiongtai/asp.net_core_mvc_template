@@ -16,6 +16,7 @@ namespace mymvc_core.Controllers
             
             return View();
         }
+
         /// <summary>
         /// 拼图游戏
         /// </summary>

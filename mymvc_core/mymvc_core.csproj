@@ -24,8 +24,8 @@
 
 
   <ItemGroup>
-    <ProjectReference Include="..\ClassLibrary1\mymvc_core.Hubs.csproj" />
     <ProjectReference Include="..\mymvc_core.Extensions\mymvc_core.Extensions.csproj" />
+    <ProjectReference Include="..\mymvc_core.Hubs\mymvc_core.Hubs.csproj" />
   </ItemGroup>
 
 

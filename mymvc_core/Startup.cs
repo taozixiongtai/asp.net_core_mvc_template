@@ -14,7 +14,6 @@ using mymvc_core.Services.Email;
 using mymvc_core.Services.interfaces;
 using mymvc_core.Services;
 using mymvc_core.Hubs;
-
 namespace mymvc_core
 {
     public class Startup
@@ -84,8 +83,8 @@ namespace mymvc_core
             services.AddTransient<IEmailSender, EmailSender>();    //发送邮件服务
             services.AddAuthentication().AddMicrosoftAccount(microsoftOptions =>    //微软的第三方登录。
             {
-                microsoftOptions.ClientId = "7a0c4b2a-1990-45af-8a97-9e66cc4bce12";
-                microsoftOptions.ClientSecret = "anxUDGJM987*|rjsuKM04):";
+                microsoftOptions.ClientId = "7a0c4b2a-1990-45af-8a97-9e66cc4bce36";
+                microsoftOptions.ClientSecret = "anxUDGJM987*|rjsuKM94):";
             });
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 

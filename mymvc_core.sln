@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mymvc_core.Serverice.Email"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mymvc_core.Extensions", "mymvc_core.Extensions\mymvc_core.Extensions.csproj", "{1C4E8C0A-63CA-4A36-B08D-916BC9EDFD7C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mymvc_core.Hubs", "ClassLibrary1\mymvc_core.Hubs.csproj", "{1AB6CCDC-67DF-4027-9B2C-D869CD29B8D0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mymvc_core.Hubs", "mymvc_core.Hubs\mymvc_core.Hubs.csproj", "{1AB6CCDC-67DF-4027-9B2C-D869CD29B8D0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

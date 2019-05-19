@@ -199,13 +199,17 @@ namespace mymvc_core.Controllers
         #endregion
 
 
-
+        /// <summary>
+        /// 登出
+        /// </summary>
+        /// <returns></returns>
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
             return RedirectToAction(nameof(IdentityController.Register), "Identity");
         }
 
+        //确定邮箱
         public IActionResult ConfirmEmail()
         {
 
@@ -256,6 +260,7 @@ namespace mymvc_core.Controllers
 
 
 
+        #region 登录测试的时候页面
         public IActionResult Login1(string returnUrl = null)
         {
 
@@ -271,11 +276,16 @@ namespace mymvc_core.Controllers
 
             return View();
         }
+        #endregion
 
 
 
 
 
+        /// <summary>
+        /// 忘记密码
+        /// </summary>
+        /// <returns></returns>
         public IActionResult ForgotPassword()
         {
             return View();
@@ -344,7 +354,11 @@ namespace mymvc_core.Controllers
         }
 
 
-        public async Task<IActionResult> ChangePassword()          //修改密码。
+        /// <summary>
+        /// 修改密码
+        /// </summary>
+        /// <returns></returns>
+        public async Task<IActionResult> ChangePassword()           
         {
             var user = await _userManager.GetUserAsync(User);
             if (user == null)
